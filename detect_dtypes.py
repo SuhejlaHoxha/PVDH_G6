@@ -1,11 +1,6 @@
 import pandas as pd
-import warnings
 
-warnings.filterwarnings(
-    "ignore",
-    message="Could not infer format",
-    category=UserWarning
-)
+
 def detect_dtypes(csv_path: str):
     df = pd.read_csv(csv_path)
 
