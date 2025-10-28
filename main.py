@@ -2,6 +2,7 @@ from detect_dtypes import detect_dtypes
 from data_quality_check import data_quality_check
 from aggregate_logs import aggregate_by_cluster, aggregate_by_decision, aggregate_by_user, aggregate_by_status_code, aggregate_by_location
 from sample_logs import sample_logs
+from clean_null_values import clean_dataset
 
 CSV_INPUT = "dataset/gcpRawAuditLogs.csv"
 
@@ -24,6 +25,9 @@ def main():
 
     print("\n--- SAMPLING STEP ---\n")
     sample_logs(CSV_INPUT)
+
+    print("\n--- CLEANING STEP ---\n")
+    clean_dataset(CSV_INPUT, "dataset/gcpRawAuditLogs_cleaned.csv")
 
 if __name__ == "__main__":
     main()
