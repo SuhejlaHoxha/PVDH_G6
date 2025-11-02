@@ -6,6 +6,7 @@ import numpy as np
 from sklearn.preprocessing import KBinsDiscretizer
 from pandas.api.types import is_numeric_dtype
 
+
 def _make_kbins(n_bins=4):
     kwargs = {"n_bins": n_bins, "encode": "ordinal", "strategy": "quantile"}
     sig = inspect.signature(KBinsDiscretizer)
@@ -13,7 +14,9 @@ def _make_kbins(n_bins=4):
         kwargs["quantile_method"] = "averaged_inverted_cdf"
     return KBinsDiscretizer(**kwargs)
 
+
 def run_discretize_binarize(input_csv: str, disc_csv: str, bin_csv: str, n_bins=4) -> dict:
+    warnings.filterwarnings("ignore", message="Bins whose width are too small")
     df = pd.read_csv(input_csv, low_memory=False)
     os.makedirs(os.path.dirname(disc_csv), exist_ok=True)
     os.makedirs(os.path.dirname(bin_csv), exist_ok=True)
@@ -33,15 +36,31 @@ def run_discretize_binarize(input_csv: str, disc_csv: str, bin_csv: str, n_bins=
 
             if uniq_count <= 1:
                 disc_dict[f"{c}__qbin"] = np.zeros(len(s))
-            else:
-                bins_here = min(n_bins, uniq_count)
-                try:
-                    kb = _make_kbins(n_bins=bins_here)
-                    disc_dict[f"{c}__qbin"] = kb.fit_transform(s.to_frame()).ravel()
-                except Exception:
+                continue
+
+            bins_here = min(n_bins, uniq_count)
+
+            try:
+                kb = _make_kbins(n_bins=bins_here)
+                result = kb.fit_transform(s.to_frame()).ravel()
+
+                if len(np.unique(result)) < 2:
                     disc_dict[f"{c}__qbin"] = pd.qcut(
-                        s.rank(method="first"), q=bins_here, labels=False, duplicates="drop"
+                        s.rank(method="first"),
+                        q=min(uniq_count, n_bins),
+                        labels=False,
+                        duplicates="drop"
                     )
+                else:
+                    disc_dict[f"{c}__qbin"] = result
+
+            except Exception:
+                disc_dict[f"{c}__qbin"] = pd.qcut(
+                    s.rank(method="first"),
+                    q=min(uniq_count, n_bins),
+                    labels=False,
+                    duplicates="drop"
+                )
 
         med = num.median(numeric_only=True)
         for c in num.columns:
