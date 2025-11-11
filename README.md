@@ -192,11 +192,11 @@ It integrates multiple modules to clean, transform, and enrich audit log data fo
 - Standardizes and scales binary and numeric features (z-score normalization):
   - `protoPayload.status.code__bin__z`, `callerIp_is_private__bin__z`, `receiveTimestamp__month__bin__z`, `insertId_*__bin__z`, etc.
 
-#### 11. **Dimensionality Reduction**
-- Applies **PCA** on processed dataset:
-  - `PCA_1, PCA_2, ..., PCA_10`
-  - Captures main patterns in audit logs for further analysis or ML tasks.
-
+#### 11. **Dimensionality Reduction (PCA)**
+- Applies **PCA** to reduce dimensionality of the processed dataset.
+- Works on numeric and one-hot encoded categorical features after scaling.
+- Keeps main patterns in the data while reducing noise.
+- Output: `PCA_1, PCA_2, ..., PCA_10` saved to CSV for further analysis or ML tasks.
 
 ## Installation and Setup
 
@@ -205,12 +205,8 @@ It integrates multiple modules to clean, transform, and enrich audit log data fo
 git clone https://github.com/SuhejlaHoxha/PVDH_G6.git
 cd PVDH_G6
 
-# Create and activate virtual environment
-python -m venv venv
-venv\Scripts\activate   # Windows
-
 # Install dependencies
 pip install -r requirements.txt
 
 # Run the preprocessing pipeline
-python src/main.py
+python main.py
