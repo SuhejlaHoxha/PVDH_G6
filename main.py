@@ -56,5 +56,9 @@ def main():
     tfm_info = run_transformations(bin_out, tfm_out)
     print("Transformations summary:", tfm_info)
 
+    print("\n--- OUTLIER DETECTION ---\n")
+    outlier_info = detect_outliers(CSV_INPUT)
+    print(outlier_info)
+
 if __name__ == "__main__":
     main()
