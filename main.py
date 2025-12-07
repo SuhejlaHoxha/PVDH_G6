@@ -64,5 +64,9 @@ def main():
     )
     print("Outlier summary:", outlier_info)
 
+    print("\n--- EXPLORATORY DATA ANALYSIS (EDA) ---\n")
+    eda_info = run_eda(CSV_CLEAN)
+    print(eda_info)
+
 if __name__ == "__main__":
     main()
