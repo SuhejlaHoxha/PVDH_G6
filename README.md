@@ -198,6 +198,25 @@ It integrates multiple modules to clean, transform, and enrich audit log data fo
 - Keeps main patterns in the data while reducing noise.
 - Output: `PCA_1, PCA_2, ..., PCA_10` saved to CSV for further analysis or ML tasks.
 
+#### 12. Outlier Detection & Removal
+
+- Identifies and removes **outlier rows** from the dataset based on both numeric and categorical features.
+- **Numeric outliers**: Detected using the **Interquartile Range (IQR)** method. Any value below `Q1 - 1.5*IQR` or above `Q3 + 1.5*IQR` is considered an outlier.
+- **Categorical outliers (rare values)**: Values that occur in less than 1% of the dataset for a given column are considered outliers.
+- **Outlier removal** ensures the dataset is cleaner, reducing noise for downstream analysis or ML tasks.
+
+#### 13. Removal of Inaccurate Data
+
+- Inaccurate and extreme values are removed from the dataset. 
+- The data is cleaned by correcting invalid values and eliminating unrealistic records. 
+- The final, cleaned dataset is saved for further analysis.
+
+#### 14. Exploratory Data Analysis (EDA)
+
+- The dataset is explored to better understand its structure and key characteristics. 
+- Basic statistical summaries are generated for numeric variables and a correlation matrix is created. 
+- A heatmap is also produced to visualize the relationships between numeric features.
+
 ## Installation and Setup
 
 ```bash
