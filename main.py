@@ -64,6 +64,10 @@ def main():
     )
     print("Outlier summary:", outlier_info)
 
+    print("\n--- REMOVING INACCURATE VALUES ---\n")
+    inaccurate_info = remove_inaccurate(CSV_CLEAN, "dataset/processed/gcpRawAuditLogs_cleaned_strict.csv")
+    print(inaccurate_info)
+
     print("\n--- EXPLORATORY DATA ANALYSIS (EDA) ---\n")
     eda_info = run_eda(CSV_CLEAN)
     print(eda_info)
