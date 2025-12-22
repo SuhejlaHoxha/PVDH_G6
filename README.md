@@ -114,6 +114,8 @@ It integrates multiple modules to clean, transform, and enrich audit log data fo
 
 - **Duplicate rows:** 0
 
+<img width="616" height="709" alt="image" src="https://github.com/user-attachments/assets/e3b8c619-b774-400e-8026-69e1e89fc8fe" />
+<img width="569" height="664" alt="image" src="https://github.com/user-attachments/assets/2074cacb-68d9-4c69-bb2a-1d437058f068" />
 
 
 #### 3. **Integration**
@@ -127,6 +129,9 @@ It integrates multiple modules to clean, transform, and enrich audit log data fo
 | allow | 572 |
 | forbid | 528 |
 
+<img width="543" height="158" alt="image" src="https://github.com/user-attachments/assets/2b504ff5-5aa6-4b44-88f4-dd9512225968" />
+
+
 - **Number of logs by cluster:**
 
 | Cluster | Count |
@@ -136,6 +141,9 @@ It integrates multiple modules to clean, transform, and enrich audit log data fo
 | dev-cluster | 212 |
 | staging-cluster | 210 |
 | prod-cluster | 202 |
+
+<img width="437" height="218" alt="image" src="https://github.com/user-attachments/assets/6cea755d-835c-4ae1-a709-1af87f4b7a6c" />
+
 
 - **Number of logs by user:**
 
@@ -147,6 +155,9 @@ It integrates multiple modules to clean, transform, and enrich audit log data fo
 | system:anonymous | 216 |
 | admin@company.com | 212 |
 
+<img width="557" height="218" alt="image" src="https://github.com/user-attachments/assets/857b648d-b6b6-43e6-8b9d-acb85a82e75b" />
+
+
 - **Number of logs by status code:**
 
 | Status Code | Count |
@@ -157,6 +168,9 @@ It integrates multiple modules to clean, transform, and enrich audit log data fo
 | 7 | 217 |
 | 13 | 206 |
 
+<img width="483" height="226" alt="image" src="https://github.com/user-attachments/assets/377ea3d2-a082-4a5d-b2f2-4b2cc3d7756d" />
+
+
 - **Number of logs by location:**
 
 | Location | Count |
@@ -165,6 +179,9 @@ It integrates multiple modules to clean, transform, and enrich audit log data fo
 | us-west1 | 283 |
 | asia-southeast1 | 275 |
 | us-central1 | 238 |
+
+<img width="391" height="197" alt="image" src="https://github.com/user-attachments/assets/5e5ee072-5b95-40bd-8d7a-2c510435110b" />
+
 
 #### 5. **Sampling**
 - Sampled 30% of the dataset
@@ -176,6 +193,9 @@ It integrates multiple modules to clean, transform, and enrich audit log data fo
 | consolidated_event_414_404737 | forbid                              | k8s_cluster    | 2024-08-18T04:11:39.0000Z |
 | consolidated_event_789_927866 | allow                               | k8s_cluster    | 2024-11-27T23:15:04.0000Z |
 | consolidated_event_245_725368 | allow                               | k8s_cluster    | 2024-04-11T06:27:51.0000Z |
+
+<img width="1107" height="274" alt="image" src="https://github.com/user-attachments/assets/06719c8e-8869-4256-aafb-efb8453fc128" />
+
 
 #### 6. **Cleaning**
 - Removes redundant columns and invalid entries.  
@@ -221,6 +241,9 @@ It integrates multiple modules to clean, transform, and enrich audit log data fo
 - The dataset is explored to better understand its structure and key characteristics. 
 - Basic statistical summaries are generated for numeric variables and a correlation matrix is created. 
 - A heatmap is also produced to visualize the relationships between numeric features.
+
+<img width="513" height="774" alt="image" src="https://github.com/user-attachments/assets/914b47e3-a2db-44ed-acea-a2c5bf81d4e6" />
+
 
 ## Installation and Setup
 
