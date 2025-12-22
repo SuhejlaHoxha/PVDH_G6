@@ -102,6 +102,9 @@ It integrates multiple modules to clean, transform, and enrich audit log data fo
   - `resource.type` → `string`
   - `timestamp` → `datetime`
 
+<img width="591" height="612" alt="image" src="https://github.com/user-attachments/assets/1d53b212-caad-49ee-9b45-1674748c0a12" />
+
+
 #### 2. **Data Quality Assessment**
 - **Missing values per column**:
 
@@ -109,7 +112,9 @@ It integrates multiple modules to clean, transform, and enrich audit log data fo
 |--------|---------|
 | labels.authorization.k8s.io/reason | 572 |
 
-- **Duplicate rows:** 0  
+- **Duplicate rows:** 0
+
+
 
 #### 3. **Integration**
 - Not performed in this workflow.
