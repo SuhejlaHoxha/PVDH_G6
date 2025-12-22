@@ -244,6 +244,12 @@ It integrates multiple modules to clean, transform, and enrich audit log data fo
 
 <img width="513" height="774" alt="image" src="https://github.com/user-attachments/assets/914b47e3-a2db-44ed-acea-a2c5bf81d4e6" />
 
+#### 15. Visualization with PowerBI
+
+<img width="1164" height="652" alt="image" src="https://github.com/user-attachments/assets/a2b0b135-a48d-4c17-9bf6-1a2ac5e45855" />
+<img width="1159" height="650" alt="image" src="https://github.com/user-attachments/assets/0b321214-1c8b-44a2-812f-0702b1506492" />
+<img width="1168" height="654" alt="image" src="https://github.com/user-attachments/assets/d943d55d-c49c-4889-9517-c7b29287eae8" />
+
 
 ## Installation and Setup
 
